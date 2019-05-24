@@ -1,11 +1,6 @@
-import RaceDash.lib
-import RaceDash.modules
+import RaceDash.lib.RaceDash as RaceDash
+import RaceDash.modules as modules
 
-lib = RaceDash.lib
-modules = RaceDash.modules
-
-data = lib.Data()
-display = lib.Display(1)
-
-modules.RPM(data, display, { x: 0, y: 0 })
-modules.Position(data, display, { x: 0, y: 14 })
+raceDash = RaceDash({ scale: 1 })
+raceDash.add(modules.RPM, { x: 0, y: 0 })
+raceDash.add(modules.Position, { x: 0, y: 10 })

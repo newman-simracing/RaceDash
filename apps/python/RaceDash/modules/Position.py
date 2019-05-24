@@ -1,13 +1,9 @@
 import RaceDash.lib.Module
 
 class Position(RaceDash.lib.Module):
-    def __init__(self, data, display, options):
-        super().__init__(data, display)
-
-        x = options.x | 0
-        y = options.y | 0
-
-        self.l = self.display.label("Pos: -/-", x, y, 14, "left")
+    def __init__(self, display, data, options):
+        super().__init__(display, data, options)
+        self.l = self.display.label("Pos: -/-", options.x, options.y, 14, "left")
 
     def update(self):
         pos = self.data.getPosition()
