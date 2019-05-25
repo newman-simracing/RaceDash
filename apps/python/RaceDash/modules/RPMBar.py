@@ -1,13 +1,11 @@
 import RaceDash.lib.Module
 
-class RPM(RaceDash.lib.Module):
+class RPMBar(RaceDash.lib.Module):
     def __init__(self, display, data, options):
         super().__init__(display, data, options)
 
     def render(self):
-        self.value = self.display.addLabel({
-            content: self.data.getRPM()
-        })
+        pass
 
     def update(self):
         rpm = self.data.RPM()
@@ -15,12 +13,12 @@ class RPM(RaceDash.lib.Module):
         perc = rpm / maxRpm * 100
         options = {}
 
-        options.color = [0.1, 0.1, 0.1, 1]
+        options.background = "normal"
         
         if perc > 60
-            options.color = [0.5, 0.5, 0.5, 1]
+            options.background = "yellow"
 
         if perc > 90
-            options.color = [0.9, 0.9, 0.9, 1]
+            options.background = "red"
 
-        self.display.updateLabel(self.value, rpm, options)
+        pass

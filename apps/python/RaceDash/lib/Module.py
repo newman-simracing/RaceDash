@@ -4,5 +4,8 @@ class Module:
         self.data = data
         self.options = options
 
+    def render(self):
+        pass
+
     def update(self):
         pass
